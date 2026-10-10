@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="610" viewBox="0 0 900 610" role="img">
+<defs><linearGradient id="fundo" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#edf3ff"/><stop offset="1" stop-color="#d9e6ff"/></linearGradient>
+<linearGradient id="tela" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2454b8"/><stop offset="1" stop-color="#3d78e3"/></linearGradient></defs>
+<rect width="900" height="610" rx="38" fill="url(#fundo)"/>
+<circle cx="751" cy="124" r="68" fill="#ffcb78" opacity=".8"/>
+<circle cx="136" cy="464" r="83" fill="#adc5ff" opacity=".5"/>
+<g fill="#fff" opacity=".7"><circle cx="144" cy="122" r="9"/><circle cx="173" cy="122" r="9"/><circle cx="202" cy="122" r="9"/><circle cx="696" cy="482" r="9"/><circle cx="725" cy="482" r="9"/><circle cx="754" cy="482" r="9"/></g>
+<ellipse cx="456" cy="530" rx="290" ry="33" fill="#b7cbf5" opacity=".6"/>
+<rect x="290" y="74" width="307" height="470" rx="35" fill="#172d68"/><rect x="306" y="94" width="275" height="415" rx="17" fill="#fff"/><circle cx="443.5" cy="528" r="7" fill="#afc9ff"/>
+<rect x="321" y="121" width="245" height="61" rx="14" fill="#e6edff"/>
+<circle cx="354" cy="151" r="18" fill="#f1c4a7"/><path d="M345 149q9-16 19 0" stroke="#5774bc" fill="none" stroke-width="4"/>
+<rect x="387" y="137" width="140" height="13" rx="7" fill="#769bdc"/><rect x="387" y="159" width="90" height="9" rx="5" fill="#b0c6ef"/>
+<rect x="321" y="202" width="182" height="78" rx="19" fill="#e8f3ff"/><text x="342" y="238" font-size="20" font-family="Arial" fill="#1a3b7c">Olá, tudo bem?</text><text x="342" y="261" font-size="15" font-family="Arial" fill="#52648e">Vamos conversar!</text>
+<rect x="372" y="306" width="194" height="73" rx="20" fill="#2b61c6"/><text x="390" y="349" font-size="22" font-family="Arial" fill="white">Estou aprendendo!</text>
+<circle cx="442" cy="446" r="37" fill="#68bfae"/><path d="M427 445l12 13 21-26" stroke="white" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<circle cx="683" cy="213" r="67" fill="#ffd79a"/><path d="M659 207q24-32 48 0m-53 21q28 27 57 0" stroke="#31529a" stroke-width="9" stroke-linecap="round" fill="none"/>
+</svg>

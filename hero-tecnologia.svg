@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="610" viewBox="0 0 900 610" role="img">
+<defs><linearGradient id="fundo" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#edf3ff"/><stop offset="1" stop-color="#d9e6ff"/></linearGradient>
+<linearGradient id="tela" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2454b8"/><stop offset="1" stop-color="#3d78e3"/></linearGradient></defs>
+<rect width="900" height="610" rx="38" fill="url(#fundo)"/>
+<circle cx="751" cy="124" r="68" fill="#ffcb78" opacity=".8"/>
+<circle cx="136" cy="464" r="83" fill="#adc5ff" opacity=".5"/>
+<g fill="#fff" opacity=".7"><circle cx="144" cy="122" r="9"/><circle cx="173" cy="122" r="9"/><circle cx="202" cy="122" r="9"/><circle cx="696" cy="482" r="9"/><circle cx="725" cy="482" r="9"/><circle cx="754" cy="482" r="9"/></g>
+<ellipse cx="457" cy="540" rx="326" ry="27" fill="#adc3eb" opacity=".5"/>
+<rect x="153" y="120" width="560" height="332" rx="24" fill="#182d67"/><rect x="170" y="137" width="526" height="292" rx="13" fill="#fff"/><rect x="421.0" y="452" width="24" height="44" fill="#647caf"/><rect x="323.0" y="493" width="220" height="17" rx="9" fill="#172f69"/>
+<rect x="170" y="139" width="526" height="54" rx="12" fill="#e7eeff"/>
+<circle cx="200" cy="166" r="8" fill="#fcac8e"/><circle cx="226" cy="166" r="8" fill="#f7cf7e"/><circle cx="252" cy="166" r="8" fill="#68bea9"/>
+<rect x="198" y="218" width="165" height="197" rx="15" fill="#eef3ff"/><circle cx="280" cy="279" r="44" fill="#bed1ff"/>
+<rect x="254" y="268" width="54" height="33" rx="5" fill="#2e62c7"/><path d="M276 301v10m-18 0h37" stroke="#204ea1" stroke-width="7" stroke-linecap="round"/>
+<rect x="388" y="221" width="267" height="27" rx="13" fill="#aec7fa"/>
+<rect x="388" y="268" width="228" height="15" rx="8" fill="#e1e9fc"/>
+<rect x="388" y="301" width="245" height="15" rx="8" fill="#e1e9fc"/>
+<rect x="388" y="336" width="154" height="49" rx="13" fill="#2454b8"/>
+<text x="465" y="367" fill="white" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold">Aprender</text>
+<rect x="638" y="347" width="144" height="125" rx="20" fill="#fff" stroke="#aec5fb" stroke-width="5"/>
+<circle cx="709" cy="392" r="26" fill="#faca78"/>
+<path d="M687 393l14 13 25-27" stroke="#173778" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

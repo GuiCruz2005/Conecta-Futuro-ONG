@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="610" viewBox="0 0 900 610" role="img">
+<defs><linearGradient id="fundo" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#edf3ff"/><stop offset="1" stop-color="#d9e6ff"/></linearGradient>
+<linearGradient id="tela" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2454b8"/><stop offset="1" stop-color="#3d78e3"/></linearGradient></defs>
+<rect width="900" height="610" rx="38" fill="url(#fundo)"/>
+<circle cx="751" cy="124" r="68" fill="#ffcb78" opacity=".8"/>
+<circle cx="136" cy="464" r="83" fill="#adc5ff" opacity=".5"/>
+<g fill="#fff" opacity=".7"><circle cx="144" cy="122" r="9"/><circle cx="173" cy="122" r="9"/><circle cx="202" cy="122" r="9"/><circle cx="696" cy="482" r="9"/><circle cx="725" cy="482" r="9"/><circle cx="754" cy="482" r="9"/></g>
+<rect x="262" y="90" width="373" height="449" rx="29" fill="#fff" stroke="#c2d3f5" stroke-width="7"/>
+<rect x="354" y="77" width="188" height="50" rx="18" fill="#1c418d"/>
+<text x="448" y="111" text-anchor="middle" fill="white" font-size="22" font-weight="bold" font-family="Arial">Cadastro</text>
+<rect x="299" y="162" width="296" height="40" rx="9" fill="#eaf0ff"/><rect x="299" y="223" width="296" height="40" rx="9" fill="#eaf0ff"/>
+<rect x="299" y="284" width="296" height="40" rx="9" fill="#eaf0ff"/><rect x="299" y="345" width="145" height="40" rx="9" fill="#eaf0ff"/>
+<rect x="460" y="345" width="135" height="40" rx="9" fill="#eaf0ff"/>
+<rect x="300" y="421" width="294" height="61" rx="13" fill="#2454b8"/>
+<text x="447" y="459" text-anchor="middle" fill="white" font-size="22" font-weight="bold" font-family="Arial">Participar</text>
+<circle cx="669" cy="410" r="77" fill="#ffcf82"/><path d="M635 410l24 24 45-53" stroke="#173778" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

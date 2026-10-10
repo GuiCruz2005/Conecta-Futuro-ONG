@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="610" viewBox="0 0 900 610" role="img">
+<defs><linearGradient id="fundo" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#edf3ff"/><stop offset="1" stop-color="#d9e6ff"/></linearGradient>
+<linearGradient id="tela" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#2454b8"/><stop offset="1" stop-color="#3d78e3"/></linearGradient></defs>
+<rect width="900" height="610" rx="38" fill="url(#fundo)"/>
+<circle cx="751" cy="124" r="68" fill="#ffcb78" opacity=".8"/>
+<circle cx="136" cy="464" r="83" fill="#adc5ff" opacity=".5"/>
+<g fill="#fff" opacity=".7"><circle cx="144" cy="122" r="9"/><circle cx="173" cy="122" r="9"/><circle cx="202" cy="122" r="9"/><circle cx="696" cy="482" r="9"/><circle cx="725" cy="482" r="9"/><circle cx="754" cy="482" r="9"/></g><rect x="160" y="136" width="576" height="327" rx="24" fill="#182d67"/><rect x="177" y="153" width="542" height="287" rx="13" fill="#fff"/><rect x="436.0" y="463" width="24" height="44" fill="#647caf"/><rect x="338.0" y="504" width="220" height="17" rx="9" fill="#172f69"/>
+<rect x="183" y="157" width="530" height="51" rx="11" fill="#eaf0fd"/>
+<text x="220" y="189" font-size="23" font-weight="bold" fill="#1c4289" font-family="Arial">Meu primeiro computador</text>
+<rect x="192" y="232" width="226" height="197" rx="15" fill="#e6eeff"/>
+<circle cx="305" cy="310" r="58" fill="#aac4ff"/><rect x="271" y="288" width="70" height="47" rx="5" fill="#2d5ec1"/>
+<path d="M302 335v12m-22 0h49" stroke="#1c3d81" stroke-width="7" stroke-linecap="round"/>
+<rect x="460" y="252" width="202" height="19" rx="9" fill="#aac3f5"/>
+<rect x="460" y="290" width="161" height="14" rx="7" fill="#dce7fa"/>
+<rect x="460" y="322" width="191" height="14" rx="7" fill="#dce7fa"/>
+<rect x="460" y="360" width="144" height="38" rx="10" fill="#2454b8"/>
+<text x="532" y="385" text-anchor="middle" font-family="Arial" font-size="18" fill="white">Começar</text>
+</svg>
