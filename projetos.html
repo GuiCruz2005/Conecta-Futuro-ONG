@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Conheça os projetos fictícios da Conecta Futuro: informática básica, programação, cidadania digital, voluntariado e formas de apoiar." name="description"/>
+  <meta content="#2454b8" name="theme-color"/>
+  <meta content="light" name="color-scheme"/>
+  <title>
+   Projetos sociais | Conecta Futuro
+  </title>
+  <link href="imagens/logo.svg" rel="icon" type="image/svg+xml"/>
+  <link href="css/style.css" rel="stylesheet"/>
+  <script defer="" src="js/script.js">
+  </script>
+ </head>
+ <body>
+  <a class="pular-conteudo" href="#conteudo">
+   Pular para o conteúdo principal
+  </a>
+  <div class="aviso-academico">
+   ONG fictícia — site demonstrativo para atividade acadêmica; não recebe doações nem inscrições reais
+  </div>
+  <header class="cabecalho">
+   <div class="container cabecalho-conteudo">
+    <a aria-label="Conecta Futuro, página inicial" class="marca" href="index.html">
+     <img alt="" height="46" src="imagens/logo.svg" width="46"/>
+     <span>
+      <strong>
+       Conecta Futuro
+      </strong>
+      <small>
+       Tecnologia para todos
+      </small>
+     </span>
+    </a>
+    <nav aria-label="Menu principal" class="menu">
+     <a href="index.html">
+      Início
+     </a>
+     <a aria-current="page" href="projetos.html">
+      Projetos
+     </a>
+     <a href="transparencia.html">
+      Transparência
+     </a>
+     <a href="painel.html">
+      Painel demo
+     </a>
+     <a class="menu-destaque" href="cadastro.html">
+      Cadastro
+     </a>
+    </nav>
+   </div>
+  </header>
+  <main id="conteudo">
+   <section aria-labelledby="titulo-principal" class="pagina-destaque">
+    <div class="container pagina-grid">
+     <div>
+      <p class="eyebrow">
+       Projetos de inclusão digital
+      </p>
+      <h1 id="titulo-principal">
+       Uma nova oportunidade começa com um clique.
+      </h1>
+      <p class="lead">
+       Conheça projetos demonstrativos de formação tecnológica e veja como o voluntariado e o apoio com equipamentos podem fazer a diferença.
+      </p>
+     </div>
+     <picture class="pagina-imagem">
+      <source srcset="imagens/projetos-digital.webp" type="image/webp"/>
+      <img alt="Ilustração de uma plataforma com três projetos de tecnologia." height="610" loading="lazy" src="imagens/projetos-digital.png" width="900"/>
+     </picture>
+    </div>
+   </section>
+   <section aria-labelledby="titulo-projetos" class="faixa" id="iniciativas">
+    <div class="container">
+     <div class="titulo-secao">
+      <p class="eyebrow">
+       Aprendizado para diferentes públicos
+      </p>
+      <h2 id="titulo-projetos">
+       Escolha uma iniciativa para conhecer
+      </h2>
+      <p>
+       Estes projetos são exemplos acadêmicos, e não oficinas com inscrições reais abertas.
+      </p>
+     </div>
+     <div class="filtro-linha">
+      <label for="filtro-projetos">
+       Filtrar por categoria:
+      </label>
+      <select id="filtro-projetos" name="categoria">
+       <option value="todos">
+        Todas as categorias
+       </option>
+       <option value="basico">
+        Informática básica
+       </option>
+       <option value="programacao">
+        Programação
+       </option>
+       <option value="cidadania">
+        Cidadania digital
+       </option>
+      </select>
+     </div>
+     <p aria-live="polite" class="sr-only" id="resultado-filtro" role="status">
+      3 projetos encontrados.
+     </p>
+     <div class="grade-3" id="grade-projetos">
+      <article class="cartao projeto-card cartao-projeto" data-categoria="basico" id="primeiros-cliques">
+       <picture>
+        <source srcset="imagens/primeiros-cliques.webp" type="image/webp"/>
+        <img alt="Ilustração de computador com material de introdução à informática." height="610" loading="lazy" src="imagens/primeiros-cliques.png" width="900"/>
+       </picture>
+       <div class="card-conteudo">
+        <span class="rotulo">
+         Informática básica
+        </span>
+        <h3>
+         Primeiros Cliques
+        </h3>
+        <p>
+         Encontros práticos sobre computador, internet, e-mail e ferramentas úteis no dia a dia. Voluntários podem orientar atividades e tirar dúvidas dos participantes.
+        </p>
+        <a class="link-seta" href="cadastro.html?interesse=voluntariado">
+         Quero ser voluntário →
+        </a>
+       </div>
+      </article>
+      <article class="cartao projeto-card cartao-projeto" data-categoria="programacao" id="codigo-oportunidades">
+       <picture>
+        <source srcset="imagens/codigo-oportunidades.webp" type="image/webp"/>
+        <img alt="Ilustração de editor de código HTML exibido na tela de um computador." height="610" loading="lazy" src="imagens/codigo-oportunidades.png" width="900"/>
+       </picture>
+       <div class="card-conteudo">
+        <span class="rotulo">
+         Programação
+        </span>
+        <h3>
+         Código de Oportunidades
+        </h3>
+        <p>
+         Oficinas de lógica e criação das primeiras páginas HTML e CSS. Pessoas voluntárias da área de tecnologia podem atuar como monitoras e mentoras.
+        </p>
+        <a class="link-seta" href="cadastro.html?interesse=voluntariado">
+         Quero ser voluntário →
+        </a>
+       </div>
+      </article>
+      <article class="cartao projeto-card cartao-projeto" data-categoria="cidadania" id="conexao-senior">
+       <picture>
+        <source srcset="imagens/conexao-senior.webp" type="image/webp"/>
+        <img alt="Ilustração de telefone com mensagens e símbolo de confirmação." height="610" loading="lazy" src="imagens/conexao-senior.png" width="900"/>
+       </picture>
+       <div class="card-conteudo">
+        <span class="rotulo">
+         Cidadania digital
+        </span>
+        <h3>
+         Conexão 60+
+        </h3>
+        <p>
+         Apoio para pessoas mais velhas utilizarem celulares, mensagens, serviços digitais e reconhecerem tentativas de golpes on-line, com explicações em ritmo acessível.
+        </p>
+        <a class="link-seta" href="cadastro.html?interesse=voluntariado">
+         Quero ser voluntário →
+        </a>
+       </div>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section aria-labelledby="titulo-impacto" class="faixa faixa-clara" id="impacto">
+    <div class="container">
+     <div class="titulo-secao">
+      <p class="eyebrow">
+       Indicadores de impacto
+      </p>
+      <h2 id="titulo-impacto">
+       Metas que gostaríamos de alcançar
+      </h2>
+      <p>
+       Os números são apenas metas de exemplo para o projeto acadêmico, não resultados obtidos.
+      </p>
+     </div>
+     <div class="grade-3 metricas">
+      <div class="cartao">
+       <span class="numero-grande">
+        100
+       </span>
+       <h3>
+        Participantes
+       </h3>
+       <p>
+        Meta ilustrativa para oficinas de informática básica.
+       </p>
+      </div>
+      <div class="cartao">
+       <span class="numero-grande">
+        40
+       </span>
+       <h3>
+        Jovens
+       </h3>
+       <p>
+        Meta ilustrativa para introdução à programação.
+       </p>
+      </div>
+      <div class="cartao">
+       <span class="numero-grande">
+        60
+       </span>
+       <h3>
+        Pessoas 60+
+       </h3>
+       <p>
+        Meta ilustrativa para aulas de cidadania digital.
+       </p>
+      </div>
+     </div>
+     <div class="video-bloco">
+      <div>
+       <h3>
+        Vídeo de apresentação
+       </h3>
+       <p>
+        Montagem curta com as ilustrações dos projetos, criada apenas para demonstrar o elemento multimídia HTML5. Não contém gravações reais.
+       </p>
+       <details>
+        <summary>
+         Descrição do vídeo
+        </summary>
+        <p>
+         Três ilustrações aparecem em sequência: informática básica, programação e uso de tecnologias por pessoas idosas.
+        </p>
+       </details>
+      </div>
+      <video aria-label="Vídeo ilustrativo com três projetos de inclusão digital" controls="" playsinline="" poster="imagens/projetos-digital.webp" preload="none">
+       <source src="videos/apresentacao-projetos.mp4" type="video/mp4"/>
+       Seu navegador não oferece suporte à reprodução deste vídeo.
+      </video>
+     </div>
+    </div>
+   </section>
+   <section aria-labelledby="titulo-ajuda" class="faixa faixa-clara">
+    <div class="container grade-2">
+     <article>
+      <p class="eyebrow">
+       Voluntariado
+      </p>
+      <h2 id="titulo-ajuda">
+       Como ser voluntário?
+      </h2>
+      <div class="passo">
+       <span class="numero">
+        1
+       </span>
+       <div>
+        <h3>
+         Escolha um projeto
+        </h3>
+        <p>
+         Você pode apoiar aulas básicas, oficinas de programação ou orientações sobre uso seguro da internet.
+        </p>
+       </div>
+      </div>
+      <div class="passo">
+       <span class="numero">
+        2
+       </span>
+       <div>
+        <h3>
+         Preencha o cadastro
+        </h3>
+        <p>
+         Indique seu interesse em voluntariado no formulário de demonstração.
+        </p>
+       </div>
+      </div>
+      <div class="passo">
+       <span class="numero">
+        3
+       </span>
+       <div>
+        <h3>
+         Compartilhe conhecimentos
+        </h3>
+        <p>
+         Em uma ONG real, a equipe combinaria horários, formação e participação nas atividades.
+        </p>
+       </div>
+      </div>
+      <div class="acoes">
+       <a class="botao botao-primario" href="cadastro.html?interesse=voluntariado">
+        Cadastro de voluntário
+       </a>
+      </div>
+     </article>
+     <article>
+      <p class="eyebrow">
+       Doações e apoio
+      </p>
+      <h2>
+       Como apoiar com doações?
+      </h2>
+      <div class="passo">
+       <span class="numero">
+        1
+       </span>
+       <div>
+        <h3>
+         Veja as necessidades
+        </h3>
+        <p>
+         Projetos de inclusão digital podem precisar de computadores, mouses, teclados e materiais para oficinas.
+        </p>
+       </div>
+      </div>
+      <div class="passo">
+       <span class="numero">
+        2
+       </span>
+       <div>
+        <h3>
+         Informe seu interesse
+        </h3>
+        <p>
+         Use o cadastro demonstrativo e escolha a opção de apoio ou doação.
+        </p>
+       </div>
+      </div>
+      <div class="passo">
+       <span class="numero">
+        3
+       </span>
+       <div>
+        <h3>
+         Conheça a prestação de contas
+        </h3>
+        <p>
+         Uma ONG real deve divulgar como os recursos e equipamentos arrecadados são utilizados.
+        </p>
+       </div>
+      </div>
+      <div class="nota">
+       <strong>
+        Atenção:
+       </strong>
+       esta é uma ONG fictícia. Não recebemos dinheiro, equipamentos nem cadastros reais.
+      </div>
+      <div class="acoes">
+       <a class="botao botao-secundario" href="cadastro.html?interesse=doacao">
+        Demonstrar interesse em doar
+       </a>
+      </div>
+     </article>
+    </div>
+   </section>
+   <section aria-labelledby="titulo-campanha" class="faixa" id="campanha">
+    <div class="container grade-2">
+     <div>
+      <p class="eyebrow">
+       Captação de recursos · Simulação
+      </p>
+      <h2 id="titulo-campanha">
+       Campanha para equipamentos
+      </h2>
+      <p>
+       Exemplo acadêmico de uma campanha para computadores, teclados e materiais de oficina. Os valores abaixo são fictícios, e nenhum pagamento acontece.
+      </p>
+      <label class="rotulo-metrica" for="barra-doacao">
+       Progresso ilustrativo:
+       <strong id="texto-progresso">
+        R$ 3.250 de R$ 5.000
+       </strong>
+      </label>
+      <progress id="barra-doacao" max="5000" value="3250">
+       65%
+      </progress>
+      <p class="ajuda">
+       O indicador é modificado apenas nesta página, durante a simulação.
+      </p>
+     </div>
+     <div class="cartao">
+      <h3>
+       Simular uma contribuição
+      </h3>
+      <form id="simulador-doacao">
+       <div class="campo">
+        <label for="valor-doacao">
+         Valor ilustrativo
+        </label>
+        <select id="valor-doacao" required="">
+         <option value="25">
+          R$ 25,00
+         </option>
+         <option value="50">
+          R$ 50,00
+         </option>
+         <option value="100">
+          R$ 100,00
+         </option>
+        </select>
+       </div>
+       <button class="botao botao-primario botao-largura" type="submit">
+        Simular doação (sem cobrança)
+       </button>
+       <p aria-live="polite" hidden="" id="retorno-doacao" role="status">
+       </p>
+      </form>
+      <p class="ajuda">
+       Não informe cartões, senhas, PIX nem dados bancários neste site.
+      </p>
+     </div>
+    </div>
+   </section>
+   <section aria-labelledby="titulo-voluntario" class="faixa faixa-clara" id="area-voluntario">
+    <div class="container">
+     <div class="titulo-secao">
+      <p class="eyebrow">
+       Portal do voluntário · Demonstração
+      </p>
+      <h2 id="titulo-voluntario">
+       Acompanhamento e certificados
+      </h2>
+      <p>
+       Uma área demonstrativa para explicar o processo de seleção e o histórico de participação. Não há contas de usuário nem inscrições gravadas.
+      </p>
+     </div>
+     <div class="grade-3">
+      <article class="cartao">
+       <h3>
+        1. Inscrição
+       </h3>
+       <p>
+        O candidato preenche o
+        <a href="cadastro.html?interesse=voluntariado">
+         formulário demonstrativo
+        </a>
+        e indica sua vontade de ajudar.
+       </p>
+      </article>
+      <article class="cartao">
+       <h3>
+        2. Seleção e histórico
+       </h3>
+       <p>
+        Em uma ONG real, a coordenação avaliaria o perfil e registraria presenças e atividades realizadas. Aqui o fluxo é apenas ilustrativo.
+       </p>
+      </article>
+      <article class="cartao">
+       <h3>
+        3. Certificado digital
+       </h3>
+       <p>
+        Confira o modelo de certificado. Ele não comprova participação ou atividade real.
+       </p>
+       <a class="link-seta" href="documentos/certificado-modelo.html">
+        Abrir certificado de exemplo →
+       </a>
+      </article>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer class="rodape">
+   <div class="container rodape-conteudo">
+    <p>
+     ©
+     <span data-ano="">
+      2026
+     </span>
+     Conecta Futuro.
+     <br/>
+     Projeto acadêmico fictício. Sem inscrições, doações ou pagamentos reais.
+    </p>
+    <nav aria-label="Links do rodapé" class="rodape-links">
+     <a href="index.html">
+      Início
+     </a>
+     <a href="projetos.html">
+      Projetos
+     </a>
+     <a href="transparencia.html">
+      Transparência
+     </a>
+     <a href="painel.html">
+      Painel demo
+     </a>
+     <a href="cadastro.html">
+      Cadastro
+     </a>
+    </nav>
+   </div>
+  </footer>
+ </body>
+</html>
+

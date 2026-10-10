@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Simulação de painel administrativo da ONG fictícia Conecta Futuro, com cadastro e edição local de projetos." name="description"/>
+  <meta content="#2454b8" name="theme-color"/>
+  <meta content="light" name="color-scheme"/>
+  <title>
+   Painel demonstrativo | Conecta Futuro
+  </title>
+  <link href="imagens/logo.svg" rel="icon" type="image/svg+xml"/>
+  <link href="css/style.css" rel="stylesheet"/>
+  <script defer="" src="js/script.js">
+  </script>
+ </head>
+ <body>
+  <a class="pular-conteudo" href="#conteudo">
+   Pular para o conteúdo principal
+  </a>
+  <div class="aviso-academico">
+   ONG fictícia — site demonstrativo para atividade acadêmica; não recebe doações nem inscrições reais
+  </div>
+  <header class="cabecalho">
+   <div class="container cabecalho-conteudo">
+    <a aria-label="Conecta Futuro, página inicial" class="marca" href="index.html">
+     <img alt="" height="46" src="imagens/logo.svg" width="46"/>
+     <span>
+      <strong>
+       Conecta Futuro
+      </strong>
+      <small>
+       Tecnologia para todos
+      </small>
+     </span>
+    </a>
+    <nav aria-label="Menu principal" class="menu">
+     <a href="index.html">
+      Início
+     </a>
+     <a href="projetos.html">
+      Projetos
+     </a>
+     <a href="transparencia.html">
+      Transparência
+     </a>
+     <a aria-current="page" href="painel.html">
+      Painel demo
+     </a>
+     <a class="menu-destaque" href="cadastro.html">
+      Cadastro
+     </a>
+    </nav>
+   </div>
+  </header>
+  <main id="conteudo">
+   <section aria-labelledby="titulo-principal" class="pagina-destaque">
+    <div class="container pagina-grid">
+     <div>
+      <p class="eyebrow">
+       Administrador · Demonstração
+      </p>
+      <h1 id="titulo-principal">
+       Painel de gerenciamento.
+      </h1>
+      <p class="lead">
+       Conheça uma simulação de dashboard, métricas, projetos, voluntários e doações. Esta página não possui autenticação e não deve ser usada para administrar uma ONG real.
+      </p>
+     </div>
+     <picture class="pagina-imagem">
+      <source srcset="imagens/hero-tecnologia.webp" type="image/webp"/>
+      <img alt="Ilustração de computador e ferramentas de tecnologia" height="610" loading="lazy" src="imagens/hero-tecnologia.png" width="900"/>
+     </picture>
+    </div>
+   </section>
+   <section aria-labelledby="titulo-resumo" class="faixa">
+    <div class="container">
+     <div class="titulo-secao">
+      <p class="eyebrow">
+       Visão geral · Números fictícios
+      </p>
+      <h2 id="titulo-resumo">
+       Indicadores demonstrativos
+      </h2>
+      <p>
+       Os valores não são calculados a partir de dados reais.
+      </p>
+     </div>
+     <div class="grade-3 metricas">
+      <div class="cartao">
+       <span class="numero-grande" id="total-projetos">
+        3
+       </span>
+       <h3>
+        Projetos ilustrativos
+       </h3>
+       <p>
+        Três projetos principais e projetos adicionados no painel.
+       </p>
+      </div>
+      <div class="cartao">
+       <span class="numero-grande">
+        12
+       </span>
+       <h3>
+        Voluntários (exemplo)
+       </h3>
+       <p>
+        Número fictício para demonstrar o indicador.
+       </p>
+      </div>
+      <div class="cartao">
+       <span class="numero-grande">
+        R$ 3.250
+       </span>
+       <h3>
+        Doações (exemplo)
+       </h3>
+       <p>
+        Nenhuma doação real foi recebida.
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section aria-labelledby="titulo-gerenciar" class="faixa faixa-clara">
+    <div class="container grade-2 painel-grid">
+     <div class="cartao">
+      <h2 id="titulo-gerenciar">
+       Cadastrar ou editar projeto
+      </h2>
+      <p class="muted">
+       Crie projetos adicionais de exemplo. Eles ficam salvos
+       <strong>
+        apenas no armazenamento local do navegador
+       </strong>
+       (quando disponível), sem envio para servidor.
+      </p>
+      <form id="form-projeto-admin">
+       <input id="id-projeto-admin" type="hidden"/>
+       <div class="campo">
+        <label for="nome-projeto-admin">
+         Nome do projeto
+        </label>
+        <input id="nome-projeto-admin" maxlength="70" minlength="3" required=""/>
+       </div>
+       <div class="campo">
+        <label for="categoria-projeto-admin">
+         Categoria
+        </label>
+        <select id="categoria-projeto-admin" required="">
+         <option value="basico">
+          Informática básica
+         </option>
+         <option value="programacao">
+          Programação
+         </option>
+         <option value="cidadania">
+          Cidadania digital
+         </option>
+        </select>
+       </div>
+       <div class="campo">
+        <label for="descricao-projeto-admin">
+         Descrição
+        </label>
+        <textarea id="descricao-projeto-admin" maxlength="300" minlength="12" required="" rows="4"></textarea>
+       </div>
+       <div class="acoes">
+        <button class="botao botao-primario" id="salvar-projeto-admin" type="submit">
+         Adicionar projeto
+        </button>
+        <button class="botao botao-secundario" hidden="" id="cancelar-edicao-admin" type="button">
+         Cancelar edição
+        </button>
+       </div>
+       <p aria-live="polite" hidden="" id="resposta-admin" role="status">
+       </p>
+      </form>
+     </div>
+     <div>
+      <h2>
+       Projetos adicionais
+      </h2>
+      <p>
+       Use os botões para editar ou excluir. Os três projetos principais permanecem fixos no site.
+      </p>
+      <ul class="lista-projetos-admin" id="lista-projetos-admin">
+       <li>
+        Nenhum projeto adicional cadastrado nesta demonstração.
+       </li>
+      </ul>
+      <p class="ajuda">
+       Importante: os dados deste painel não constituem um banco de dados ou sistema seguro.
+      </p>
+     </div>
+    </div>
+   </section>
+   <section aria-labelledby="titulo-gestao" class="faixa">
+    <div class="container">
+     <div class="titulo-secao">
+      <p class="eyebrow">
+       Gestão de pessoas e recursos
+      </p>
+      <h2 id="titulo-gestao">
+       Etapas administrativas previstas
+      </h2>
+      <p>
+       Fluxos ilustrativos para indicar como seriam acompanhados os voluntários, as doações e o impacto dos projetos.
+      </p>
+     </div>
+     <div class="grade-3">
+      <article class="cartao">
+       <h3>
+        Voluntários
+       </h3>
+       <p>
+        Inscrição → análise → participação → certificado. O formulário público não armazena inscrições reais.
+       </p>
+      </article>
+      <article class="cartao">
+       <h3>
+        Doações
+       </h3>
+       <p>
+        Campanha → simulação de valores → registro demonstrativo → prestação de contas.
+       </p>
+       <a href="projetos.html#campanha">
+        Ver campanha de exemplo
+       </a>
+      </article>
+      <article class="cartao">
+       <h3>
+        Resultados
+       </h3>
+       <p>
+        Metas de participação, indicadores planejados e publicação de relatórios para a comunidade.
+       </p>
+       <a href="transparencia.html">
+        Ver transparência
+       </a>
+      </article>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer class="rodape">
+   <div class="container rodape-conteudo">
+    <p>
+     ©
+     <span data-ano="">
+      2026
+     </span>
+     Conecta Futuro.
+     <br/>
+     Projeto acadêmico fictício. Sem inscrições, doações ou pagamentos reais.
+    </p>
+    <nav aria-label="Links do rodapé" class="rodape-links">
+     <a href="index.html">
+      Início
+     </a>
+     <a href="projetos.html">
+      Projetos
+     </a>
+     <a href="transparencia.html">
+      Transparência
+     </a>
+     <a href="painel.html">
+      Painel demo
+     </a>
+     <a href="cadastro.html">
+      Cadastro
+     </a>
+    </nav>
+   </div>
+  </footer>
+ </body>
+</html>
+

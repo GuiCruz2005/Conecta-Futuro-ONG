@@ -1,0 +1,256 @@
+(function () {
+'use strict';
+/* Funções simples para a atividade: filtro de projetos e máscaras do formulário. */
+
+// Atualiza automaticamente o ano nos rodapés.
+document.querySelectorAll('[data-ano]').forEach(function (elemento) {
+  elemento.textContent = new Date().getFullYear();
+});
+
+// O filtro funciona apenas na página de projetos.
+const filtro = document.querySelector('#filtro-projetos');
+if (filtro) {
+  const resultado = document.querySelector('#resultado-filtro');
+
+  filtro.addEventListener('change', function () {
+    let visiveis = 0;
+    document.querySelectorAll('[data-categoria]').forEach(function (cartao) {
+      const exibir = filtro.value === 'todos' || cartao.dataset.categoria === filtro.value;
+      cartao.hidden = !exibir;
+      if (exibir) visiveis++;
+    });
+    resultado.textContent = visiveis === 1 ? '1 projeto encontrado.' : visiveis + ' projetos encontrados.';
+  });
+}
+
+// As máscaras removem letras e pontuação digitadas, exibindo apenas o formato.
+function somenteNumeros(valor, limite) {
+  return valor.replace(/\D/g, '').slice(0, limite);
+}
+
+function mascaraCPF(valor) {
+  return somenteNumeros(valor, 11)
+    .replace(/(\d{3})(\d)/, '$1.$2')
+    .replace(/(\d{3})(\d)/, '$1.$2')
+    .replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+}
+
+function mascaraTelefone(valor) {
+  const numeros = somenteNumeros(valor, 11);
+  if (numeros.length <= 2) return numeros;
+  const ddd = numeros.slice(0, 2);
+  const restante = numeros.slice(2);
+  const quantidadeInicial = numeros.length > 10 ? 5 : 4;
+  const inicio = restante.slice(0, quantidadeInicial);
+  const final = restante.slice(quantidadeInicial);
+  return '(' + ddd + ') ' + inicio + (final ? '-' + final : '');
+}
+
+function mascaraCEP(valor) {
+  return somenteNumeros(valor, 8).replace(/(\d{5})(\d)/, '$1-$2');
+}
+
+const cpf = document.querySelector('#cpf');
+const telefone = document.querySelector('#telefone');
+const cep = document.querySelector('#cep');
+
+if (cpf) cpf.addEventListener('input', function () { cpf.value = mascaraCPF(cpf.value); });
+if (telefone) telefone.addEventListener('input', function () { telefone.value = mascaraTelefone(telefone.value); });
+if (cep) cep.addEventListener('input', function () { cep.value = mascaraCEP(cep.value); });
+
+const formulario = document.querySelector('#formulario-cadastro');
+if (formulario) {
+  // Impede que uma data futura seja escolhida como data de nascimento.
+  const nascimento = document.querySelector('#nascimento');
+  const hoje = new Date();
+  const ano = hoje.getFullYear();
+  const mes = String(hoje.getMonth() + 1).padStart(2, '0');
+  const dia = String(hoje.getDate()).padStart(2, '0');
+  nascimento.max = ano + '-' + mes + '-' + dia;
+
+  // Links da página de projetos podem indicar o tipo de participação.
+  const interesse = new URLSearchParams(window.location.search).get('interesse');
+  if (interesse === 'voluntariado' || interesse === 'doacao') {
+    document.querySelector('#interesse').value = interesse;
+  }
+
+  formulario.addEventListener('submit', function (evento) {
+    evento.preventDefault(); // Demonstração: nenhum dado vai para um servidor.
+    if (!formulario.checkValidity()) {
+      formulario.reportValidity();
+      return;
+    }
+
+    const primeiroNome = document.querySelector('#nome').value.trim().split(/\s+/)[0];
+    const mensagem = document.querySelector('#resposta-formulario');
+    mensagem.textContent = 'Obrigado, ' + primeiroNome + '! Formulário de exemplo preenchido com sucesso. Seus dados não foram enviados nem armazenados.';
+    mensagem.hidden = false;
+    mensagem.focus();
+  });
+}
+
+
+// Todos os recursos abaixo são demonstrações locais, sem servidor.
+const boletim = document.querySelector('#form-newsletter');
+if (boletim) {
+  boletim.addEventListener('submit', function (evento) {
+    evento.preventDefault();
+    if (!boletim.reportValidity()) return;
+    const retorno = document.querySelector('#retorno-newsletter');
+    retorno.textContent = 'Inscrição simulada com sucesso. O e-mail não foi enviado nem armazenado.';
+    retorno.hidden = false;
+    boletim.reset();
+  });
+}
+
+const simulador = document.querySelector('#simulador-doacao');
+if (simulador) {
+  const barra = document.querySelector('#barra-doacao');
+  const progresso = document.querySelector('#texto-progresso');
+  const retorno = document.querySelector('#retorno-doacao');
+  simulador.addEventListener('submit', function (evento) {
+    evento.preventDefault();
+    const incremento = Number(document.querySelector('#valor-doacao').value);
+    if (![25, 50, 100].includes(incremento)) return;
+    barra.value = Math.min(5000, Number(barra.value) + incremento);
+    progresso.textContent = 'R$ ' + Number(barra.value).toLocaleString('pt-BR') + ' de R$ 5.000';
+    retorno.textContent = 'Doação de R$ ' + incremento.toLocaleString('pt-BR') + ',00 simulada. Não houve cobrança ou pagamento.';
+    retorno.hidden = false;
+  });
+}
+
+// Painel administrativo de exemplo: somente títulos, categorias e descrições
+// de projetos adicionais são guardados no próprio navegador (localStorage).
+const CHAVE_PROJETOS = 'conectaFuturo.projetosDemonstrativos.v1';
+let projetosDeExemplo = [];
+try {
+  const armazenados = JSON.parse(localStorage.getItem(CHAVE_PROJETOS) || '[]');
+  if (Array.isArray(armazenados)) {
+    projetosDeExemplo = armazenados.filter(function (item) {
+      return item && typeof item.id === 'string' && typeof item.nome === 'string' &&
+        typeof item.descricao === 'string' && ['basico','programacao','cidadania'].includes(item.categoria);
+    }).slice(0, 12);
+  }
+} catch (erro) {
+  // Caso o navegador bloqueie o armazenamento local, a página continua funcional.
+  projetosDeExemplo = [];
+}
+function salvarProjetos() {
+  try { localStorage.setItem(CHAVE_PROJETOS, JSON.stringify(projetosDeExemplo)); }
+  catch (erro) { /* sem armazenamento, alterações só permanecem nesta página */ }
+}
+const categorias = {
+  basico: 'Informática básica',
+  programacao: 'Programação',
+  cidadania: 'Cidadania digital'
+};
+
+const listaAdmin = document.querySelector('#lista-projetos-admin');
+const painelForm = document.querySelector('#form-projeto-admin');
+function renderizarAdmin() {
+  if (!listaAdmin) return;
+  listaAdmin.replaceChildren();
+  if (!projetosDeExemplo.length) {
+    const vazio = document.createElement('li');
+    vazio.textContent = 'Nenhum projeto adicional cadastrado nesta demonstração.';
+    listaAdmin.append(vazio);
+  }
+  projetosDeExemplo.forEach(function (projeto) {
+    const li = document.createElement('li');
+    const titulo = document.createElement('strong'); titulo.textContent = projeto.nome;
+    const info = document.createElement('p');
+    info.textContent = categorias[projeto.categoria] + ' — ' + projeto.descricao;
+    const acoes = document.createElement('div'); acoes.className = 'acoes acoes-pequenas';
+    [['Editar', 'editar'], ['Excluir', 'excluir']].forEach(function (especificacao) {
+      const botao = document.createElement('button');
+      botao.type = 'button'; botao.className = 'botao botao-secundario';
+      botao.textContent = especificacao[0]; botao.dataset.acao = especificacao[1];
+      botao.dataset.id = projeto.id; acoes.append(botao);
+    });
+    li.append(titulo, info, acoes); listaAdmin.append(li);
+  });
+  const total = document.querySelector('#total-projetos');
+  if (total) total.textContent = String(3 + projetosDeExemplo.length);
+}
+
+if (painelForm && listaAdmin) {
+  const campoId = document.querySelector('#id-projeto-admin');
+  const campoNome = document.querySelector('#nome-projeto-admin');
+  const campoCategoria = document.querySelector('#categoria-projeto-admin');
+  const campoDescricao = document.querySelector('#descricao-projeto-admin');
+  const botaoSalvar = document.querySelector('#salvar-projeto-admin');
+  const cancelar = document.querySelector('#cancelar-edicao-admin');
+  const resposta = document.querySelector('#resposta-admin');
+  function limparFormulario() {
+    painelForm.reset(); campoId.value = '';
+    botaoSalvar.textContent = 'Adicionar projeto'; cancelar.hidden = true;
+  }
+  painelForm.addEventListener('submit', function (evento) {
+    evento.preventDefault();
+    if (!painelForm.reportValidity()) return;
+    const nome = campoNome.value.trim();
+    const descricao = campoDescricao.value.trim();
+    if (nome.length < 3 || descricao.length < 12) {
+      resposta.textContent = 'Informe nome e descrição com o tamanho mínimo exigido.';
+      resposta.hidden = false; return;
+    }
+    if (campoId.value) {
+      const existente = projetosDeExemplo.find(function (x) { return x.id === campoId.value; });
+      if (existente) Object.assign(existente, {nome:nome, descricao:descricao, categoria:campoCategoria.value});
+      resposta.textContent = 'Projeto demonstrativo atualizado.';
+    } else {
+      if (projetosDeExemplo.length >= 12) {
+        resposta.textContent = 'Limite de 12 projetos adicionais de demonstração atingido.';
+        resposta.hidden = false; return;
+      }
+      const id = String(Date.now()) + '-' + String(Math.floor(Math.random() * 1000000));
+      projetosDeExemplo.push({id:id, nome:nome, descricao:descricao, categoria:campoCategoria.value});
+      resposta.textContent = 'Projeto demonstrativo criado.';
+    }
+    resposta.hidden = false;
+    salvarProjetos(); limparFormulario(); renderizarAdmin();
+  });
+  cancelar.addEventListener('click', limparFormulario);
+  listaAdmin.addEventListener('click', function (evento) {
+    const botao = evento.target.closest('button[data-acao]');
+    if (!botao) return;
+    const projeto = projetosDeExemplo.find(function (x) { return x.id === botao.dataset.id; });
+    if (!projeto) return;
+    if (botao.dataset.acao === 'editar') {
+      campoId.value = projeto.id; campoNome.value = projeto.nome;
+      campoCategoria.value = projeto.categoria; campoDescricao.value = projeto.descricao;
+      botaoSalvar.textContent = 'Salvar alterações'; cancelar.hidden = false;
+      campoNome.focus();
+    } else if (botao.dataset.acao === 'excluir') {
+      projetosDeExemplo = projetosDeExemplo.filter(function (x) { return x.id !== projeto.id; });
+      salvarProjetos(); limparFormulario(); renderizarAdmin();
+      resposta.textContent = 'Projeto demonstrativo excluído.'; resposta.hidden = false;
+    }
+  });
+  renderizarAdmin();
+}
+
+// Mostra na lista pública os projetos adicionais criados no painel demo.
+const gradeProjetos = document.querySelector('#grade-projetos');
+if (gradeProjetos) {
+  projetosDeExemplo.forEach(function (projeto) {
+    const artigo = document.createElement('article');
+    artigo.className = 'cartao cartao-projeto extra-projeto';
+    artigo.dataset.categoria = projeto.categoria;
+    const categoria = document.createElement('span');
+    categoria.className = 'rotulo'; categoria.textContent = categorias[projeto.categoria];
+    const titulo = document.createElement('h3'); titulo.textContent = projeto.nome;
+    const descricao = document.createElement('p'); descricao.textContent = projeto.descricao;
+    const link = document.createElement('a');
+    link.href = 'cadastro.html?interesse=voluntariado';
+    link.className = 'link-seta'; link.textContent = 'Demonstrar interesse →';
+    artigo.append(categoria, titulo, descricao, link); gradeProjetos.append(artigo);
+  });
+  const resultado = document.querySelector('#resultado-filtro');
+  if (resultado) {
+    const total = gradeProjetos.querySelectorAll('[data-categoria]').length;
+    resultado.textContent = total + ' projetos encontrados.';
+  }
+}
+
+})();
